@@ -1,6 +1,8 @@
 package com.br.monstrinho.dto;
 
+import com.br.monstrinho.model.EnumEsportes;
 import com.br.monstrinho.model.EnumGenero;
+import com.br.monstrinho.model.EnumModalidade;
 import com.br.monstrinho.model.EnumPeriodo;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.Email;
@@ -11,7 +13,6 @@ import lombok.Data;
 
 import java.sql.Time;
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 @Data
 @AllArgsConstructor
@@ -42,10 +43,8 @@ public class CreateCadastroRequestDTO {
     @Email(message = "O e-mail deve ser válido")
     private String email;
 
-    @NotBlank(message = "O número de celular do responsável não pode estar em branco")
     @Pattern(regexp = "\\(\\d{2}\\)\\s\\d{5}-\\d{4}", message = "O celular do responsável deve estar no formato (XX) XXXXX-XXXX")
     private String celResponsavel;
-
 
     private Time horario;
 
@@ -53,6 +52,9 @@ public class CreateCadastroRequestDTO {
 
     private EnumPeriodo periodo;
 
-    @NotBlank(message = "O nome do responsável não pode estar em branco")
+    private EnumModalidade modalidade;
+
+    private EnumEsportes esportes;
+
     private String nomeResponsavel;
 }

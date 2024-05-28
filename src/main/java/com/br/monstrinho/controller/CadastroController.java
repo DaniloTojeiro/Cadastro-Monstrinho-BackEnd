@@ -28,7 +28,7 @@ public class CadastroController {
     }
 
     @Operation(summary = "Find All Cadastro")
-    @GetMapping
+    @GetMapping("/findAll")
     public ResponseEntity<List<Cadastro>> findAllCadastro(){
         List<Cadastro> all =cadastroService.findAllCadastro();
         if (isEmpty(all)) return new ResponseEntity<>(HttpStatus.NO_CONTENT);

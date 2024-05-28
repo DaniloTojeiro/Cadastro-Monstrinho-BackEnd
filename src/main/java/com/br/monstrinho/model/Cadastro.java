@@ -22,6 +22,9 @@ public class Cadastro {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Enumerated(EnumType.STRING)
+    private EnumModalidade modalidade;
+
     private String nome;
     private String endereco;
     private String rg;
@@ -46,10 +49,14 @@ public class Cadastro {
     @Enumerated(EnumType.STRING)
     private EnumPeriodo periodo;
 
+    @Enumerated(EnumType.STRING)
+    private EnumEsportes esportes;
+
     @Column(name = "nome_responsavel")
     private String nomeResponsavel;
 
     public Cadastro(CreateCadastroRequestDTO dto){
+        this.modalidade = dto.getModalidade();
         this.nome = dto.getNome();
         this.endereco = dto.getEndereco();
         this.rg = dto.getRg();
@@ -62,6 +69,7 @@ public class Cadastro {
         this.horario = dto.getHorario();
         this.genero = dto.getGenero();
         this.periodo = dto.getPeriodo();
+        this.esportes = dto.getEsportes();
         this.nomeResponsavel = dto.getNomeResponsavel();
     }
 }
