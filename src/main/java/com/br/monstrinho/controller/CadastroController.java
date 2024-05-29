@@ -57,7 +57,7 @@ public class CadastroController {
     }
 
     @Operation(summary = "Update Cadastro by Id")
-    @PutMapping("update/{id}")
+    @PatchMapping("update/{id}")
     @Transactional
     public ResponseEntity<Object> updateCadastro(@PathVariable("id") Long id,
                                                  @RequestBody UpdateCadastroRequestDTO dto){
