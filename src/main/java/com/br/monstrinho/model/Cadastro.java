@@ -55,6 +55,9 @@ public class Cadastro {
     @Column(name = "nome_responsavel")
     private String nomeResponsavel;
 
+    @Enumerated(EnumType.STRING)
+    private EnumTurma turma;
+
     public Cadastro(CreateCadastroRequestDTO dto){
         this.modalidade = dto.getModalidade();
         this.nome = dto.getNome();
@@ -71,6 +74,7 @@ public class Cadastro {
         this.periodo = dto.getPeriodo();
         this.esportes = dto.getEsportes();
         this.nomeResponsavel = dto.getNomeResponsavel();
+        this.turma = dto.getTurma();
     }
 }
 

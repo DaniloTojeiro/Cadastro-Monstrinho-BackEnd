@@ -1,9 +1,6 @@
 package com.br.monstrinho.dto;
 
-import com.br.monstrinho.model.EnumEsportes;
-import com.br.monstrinho.model.EnumGenero;
-import com.br.monstrinho.model.EnumModalidade;
-import com.br.monstrinho.model.EnumPeriodo;
+import com.br.monstrinho.model.*;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -57,4 +54,6 @@ public class CreateCadastroRequestDTO {
     private EnumEsportes esportes;
 
     private String nomeResponsavel;
+
+    private EnumTurma turma;
 }

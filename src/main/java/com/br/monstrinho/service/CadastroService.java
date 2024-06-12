@@ -65,6 +65,7 @@ public class CadastroService {
                         existingCadastro.setNomeResponsavel(d.getNomeResponsavel());
                         existingCadastro.setModalidade(d.getModalidade());
                         existingCadastro.setEsportes(d.getEsportes());
+                        existingCadastro.setTurma(d.getTurma());
                         return cadastroRepository.save(existingCadastro);
                     }));
 

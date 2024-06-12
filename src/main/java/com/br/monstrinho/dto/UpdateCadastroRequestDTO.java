@@ -1,9 +1,6 @@
 package com.br.monstrinho.dto;
 
-import com.br.monstrinho.model.EnumEsportes;
-import com.br.monstrinho.model.EnumGenero;
-import com.br.monstrinho.model.EnumModalidade;
-import com.br.monstrinho.model.EnumPeriodo;
+import com.br.monstrinho.model.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -59,4 +56,6 @@ public class UpdateCadastroRequestDTO {
 
     @NotBlank(message = "O nome do responsável não pode estar em branco")
     private String nomeResponsavel;
+
+    private EnumTurma turma;
 }
